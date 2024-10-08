@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6jfr0axnhcey"]
+
+[ext_resource type="Script" path="res://scripts/monster.gd" id="1_qfyq5"]
+[ext_resource type="Texture2D" uid="uid://cq8jeipm6yco2" path="res://assets/Tilemap/tilemap_packed.png" id="2_6o5qo"]
+[ext_resource type="PackedScene" uid="uid://b1w03gfyart4c" path="res://scenes/killzone.tscn" id="3_pm27o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuqst"]
+atlas = ExtResource("2_6o5qo")
+region = Rect2(144, 60, 20, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qm0my"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuqst")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks2id"]
+size = Vector2(18, 9)
+
+[node name="Monster" type="Node2D"]
+script = ExtResource("1_qfyq5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qm0my")
+autoplay = "default"
+frame_progress = 0.965568
+flip_h = true
+
+[node name="Killzone" parent="." instance=ExtResource("3_pm27o")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_ks2id")
