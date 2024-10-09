@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6jfr0axnhcey"]
 
-[ext_resource type="Script" path="res://scripts/monster.gd" id="1_qfyq5"]
+[ext_resource type="Script" path="res://pinchos.gd" id="1_ivq8v"]
 [ext_resource type="Texture2D" uid="uid://cq8jeipm6yco2" path="res://assets/Tilemap/tilemap_packed.png" id="2_6o5qo"]
 [ext_resource type="PackedScene" uid="uid://b1w03gfyart4c" path="res://scenes/killzone.tscn" id="3_pm27o"]
 
@@ -23,7 +23,7 @@ animations = [{
 size = Vector2(18, 9)
 
 [node name="Monster" type="Node2D"]
-script = ExtResource("1_qfyq5")
+script = ExtResource("1_ivq8v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qm0my")
