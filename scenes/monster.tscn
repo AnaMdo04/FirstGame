@@ -36,7 +36,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ks2id"]
 size = Vector2(24, 21)
 
-[node name="Monster" type="Node2D"]
+[node name="Monster" type="Node2D" groups=["monsters"]]
 script = ExtResource("1_fw561")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -48,7 +48,7 @@ flip_h = true
 
 [node name="Killzone" parent="." instance=ExtResource("2_w1ij1")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" groups=["monsters"]]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ks2id")
 

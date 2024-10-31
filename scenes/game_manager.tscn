@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://b182d3l1s70y7"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_rlnsv"]
+[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="2_1e2sa"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_rlnsv")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 929.0
+offset_top = -105.0
+offset_right = 1140.0
+offset_bottom = -70.0
+theme_override_fonts/font = ExtResource("2_1e2sa")
+text = "Conseguiste x monedas"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ammo_label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.001
+anchor_top = 0.005
+anchor_right = 1.001
+anchor_bottom = 0.005
+offset_left = -140.152
+offset_top = -0.24
+offset_right = -0.1521
+offset_bottom = 35.76
+size_flags_horizontal = 8
+text = "Tienes x balas"
+horizontal_alignment = 1
+autowrap_mode = 2

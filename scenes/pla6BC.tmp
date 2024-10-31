@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://7w7odathypyp"]
+[gd_scene load_steps=20 format=3 uid="uid://7w7odathypyp"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pvdsg"]
+[ext_resource type="PackedScene" uid="uid://d23cih5stlbx5" path="res://scenes/ice.tscn" id="2_6v6pb"]
 [ext_resource type="Texture2D" uid="uid://b0l6otvoi1ops" path="res://assets/Witch/B_witch_idle.png" id="2_8or1a"]
 [ext_resource type="Texture2D" uid="uid://dson87vb3ynkg" path="res://assets/Witch/B_witch_run.png" id="3_b1y8r"]
 
@@ -131,10 +132,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3etc"]
 size = Vector2(16, 35.5)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D"]
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_pvdsg")
+ice = ExtResource("2_6v6pb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 5)
@@ -143,12 +145,11 @@ sprite_frames = SubResource("SpriteFrames_ay8n7")
 animation = &"run"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0.25)
 shape = SubResource("RectangleShape2D_g3etc")
 
-[node name="Shoot" type="Node2D" parent="."]
+[node name="Shoot" type="Marker2D" parent="."]
 
-[node name="ShootCoolDown" type="Timer" parent="."]
-
-[connection signal="timeout" from="ShootCoolDown" to="." method="_on_shoot_cool_down_timeout"]
+[node name="Direction" type="Marker2D" parent="Shoot"]
+position = Vector2(26, 4)
