@@ -9,7 +9,7 @@ var direction = 1
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _ready() -> void:
-	add_to_group("monsters")  # Asegúrate de que el monstruo esté en el grupo
+	add_to_group("monsters") 
 
 func _process(delta):
 	if ray_cast_right.is_colliding():

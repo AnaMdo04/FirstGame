@@ -14,13 +14,13 @@ func set_direction(new_direction: Vector2) -> void:
 	apply_impulse(Vector2.ZERO, direction * speed)
 
 func _on_timer_timeout() -> void:
-	queue_free()  # Eliminar el proyectil después de un tiempo
+	queue_free()
 
 func _on_body_entered(body):
-	print("Colisión con: ", body.name)  # Para depuración
+	print("Colisión con: ", body.name) 
 	if body.is_in_group("monsters"):
 		print("¡Monstruo eliminado!")
-		body.queue_free()  # Eliminar el monstruo
+		body.queue_free()
 	else:
 		print("No es un monstruo: ", body.name)
-	queue_free()  # Eliminar el proyectil
+	queue_free() 

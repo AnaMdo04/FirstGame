@@ -20,11 +20,10 @@ func _on_body_entered(body):
 		is_alive = false
 		print("You died!")
 		Engine.time_scale = 0.5
-		queue_free()  # O la lógica que uses para eliminar al jugador
-		# Aquí puedes llamar a la lógica de reinicio
+		queue_free() 
 
 func _ready() -> void:
-	add_to_group("player")  # Añadir al grupo "player"
+	add_to_group("player")
 	if game_manager == null:
 		print("Error: GameManager no encontrado.")
 	shoot_cool_down.wait_time = 0.2
@@ -76,7 +75,7 @@ func shoot_impulse() -> void:
 		return
 
 	var bala = ice2.instantiate()
-	game_manager.use_ammo()  # Usa una bala y actualiza el contador
+	game_manager.use_ammo() 
 	bala.position = shoot.global_position
 
 	var impulse_direction: Vector2
@@ -102,7 +101,7 @@ func shoot_raycast() -> void:
 		return
 
 	var bala_temp = ice.instantiate()
-	game_manager.use_ammo()  # Usa una bala y actualiza el contador
+	game_manager.use_ammo() 
 	bala_temp.position = shoot.global_position
 
 	var bala_direction: Vector2

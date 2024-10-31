@@ -3,10 +3,10 @@ extends Area2D
 @onready var timer = $Timer
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):  # Solo reiniciar si es el jugador
+	if body.is_in_group("player"):
 		print("You died!")
 		Engine.time_scale = 0.5
-		body.get_node("CollisionShape2D").queue_free()  # O la lógica que uses para eliminar al jugador
+		body.get_node("CollisionShape2D").queue_free()
 		timer.start()
 
 func _on_timer_timeout():

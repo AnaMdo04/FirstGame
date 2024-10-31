@@ -19,8 +19,8 @@ func _on_timer_timeout() -> void:
 	queue_free()
 
 func _on_area_entered(area):
-	print("Colisión con: ", area.name)  # Para debug
+	print("Colisión con: ", area.name) 
 	if area.is_in_group("monsters") or area.get_parent().is_in_group("monsters"):
 		print("¡Monstruo eliminado!")
-		area.get_parent().queue_free()  # Eliminar al monstruo
-		queue_free()  # Eliminar el proyectil
+		area.get_parent().queue_free() 
+		queue_free() 
